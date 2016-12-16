@@ -21,9 +21,7 @@
 <script>
 if(!<%=validPassword%>) {
 	alert("Invalid Information!");
-	window.location.href = "./sign_in.html";
-	return;
- 
+	window.location.href = "./sign_in.html"; 
 }
 </script>
 </head>
