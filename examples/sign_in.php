@@ -1,3 +1,7 @@
+<?php 
+header("Content-Type:text/html; charset=utf-8;"); 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -24,9 +28,9 @@
       <form class="form-signin" method="post" action="iframe.php">
         <h2 class="form-signin-heading">Please sign in</h2>
         <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="text" id="inputEmail" name="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input type="text" id="inputEmail" name="inputEmail" class="form-control" placeholder="끝자리 m을 제외한 가맹점 ID" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword"  name="inputPassword" class="form-control" placeholder="Password" required>
+        <input type="password" id="inputPassword"  name="inputPassword" class="form-control" placeholder="비밀번호" required>
         <div class="checkbox">
           <label>
             <input type="checkbox" value="remember-me"> Remember me
