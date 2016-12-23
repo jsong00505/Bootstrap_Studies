@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NICE DEVELOPERS</title>
+<script>
+function do_request() {
+	var doc_form = document.req_form;
+	doc_form.TID.value = "hello, there!";
+	
+	var minutes = 1000 * 60;
+	var hours = minutes * 60;
+	var days = hours * 24;
+	var years = days * 365;
+	
+	var d = new Date();
+	var t = d.getTime();
+
+	var y = Math.round(t / years);
+	var yy = 1970 + y - 2001;
+	var uid = (new Date().getTime()).toString(5);
+	var uid2 = (new Date().getTime()).toString(5);
+
+	
+	var components = [
+		yy,
+		d.getMonth()+1,
+		d.getDate(),
+		checkTime(d.getHours()),
+		checkTime(d.getMinutes()),
+		checkTime(d.getSeconds()),
+		checkMillisec(d.getMilliseconds())
+	];
+	
+	var test_comp = [
+		uid,
+		uid2
+	];
+	
+	alert("test:" + test_comp.join(" "));
+}
+
+function checkTime(i) {
+	return (i < 10) ? "0" + i : i;
+}
+
+function checkMillisec(i) {
+	if (i < 10) {
+		i = "00" + i;
+	} else if(i < 100) {
+		i = "0" + i;
+	}
+	
+	return i;
+}
+
+</script>
+</head>
+<style type="text/css">
+	body, html
+	{
+		margin: 0; padding: 0; height: 100%; overflow: hidden;
+	}
+</style>
+<body>
+
+<form name="req_form">
+<input type="hidden" name="TID" value="">
+<input type="button" value="request" onClick="do_request();">
+</form>
+
+</body>
+</html>
